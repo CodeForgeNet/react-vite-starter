@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 
 
-// This code is responsible for running top level code
+// This code is responsible for running top level code :
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
