@@ -25,7 +25,14 @@ const ListEmployeeComponent = () => {
 
   return (
     <div>
-      
+      <h2>List of Emoloyees</h2>
+      <table>
+        <thead>
+            <tr>
+                <th>Employee first name</th>
+            </tr>
+        </thead>
+      </table>
     </div>
   )
 }
