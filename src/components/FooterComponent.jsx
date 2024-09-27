@@ -3,8 +3,8 @@ import React from 'react'
 const FooterComponent = () => {
   return (
     <div>
-      <footer className='' >
-
+      <footer className='footer' >
+        
       </footer>
     </div>
   )
