@@ -16,6 +16,7 @@ const ListEmployeeComponent = () => {
   return (
     <div className='container ' >
       <h2 className='text-center'>List of Emoloyees</h2>
+      <button className='btn btn-primary' >Add Employee</button>
       <table className='table table-striped table-bordered' >
         <thead>
             <tr>
