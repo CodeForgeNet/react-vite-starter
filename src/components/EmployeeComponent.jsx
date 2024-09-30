@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { createEmployee } from '../services/EmoloyeeService'
+import { useNavigate } from 'react-router-dom';
 
 const EmployeeComponent = () => {
 
@@ -6,21 +8,18 @@ const EmployeeComponent = () => {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
 
-  function handleFirstName(e){
-    setFirstName(e.target.value);
-  }
-  function handleLastName(e){
-    handleLastName(e.target.value);
-  }
-  function handleEmail(e){
-    handleEmail(e.target.value);
-  }
+  const navigator = useNavigate();
 
-  function saveEmployee(){
+  function saveEmployee(e) {
     e.preventDefault();
 
-    const employee = {firstName, lastName, email}
+    const employee = { firstName, lastName, email }
     console.log(employee)
+
+    createEmployee(employee).then((response) => {
+      console.log(response.data);
+      navigator('/employees')
+    })
   }
 
   return (
@@ -33,17 +32,17 @@ const EmployeeComponent = () => {
             <form>
               <div className="form-group mb-2">
                 <label className="form-label">First Name : </label>
-                <input type='text' placeholder='Enter Employee First Name' name='firstName' value={firstName} className='form-control' onChange={handleFirstName} >
+                <input type='text' placeholder='Enter Employee First Name' name='firstName' value={firstName} className='form-control' onChange={(e) => setFirstName(e.target.value)} >
                 </input>
               </div>
               <div className="form-group mb-2">
                 <label className="form-label">Last Name : </label>
-                <input type='text' placeholder='Enter Employee Last Name' name='lastName' value={lastName} className='form-control' onChange={handleLastName} >
+                <input type='text' placeholder='Enter Employee Last Name' name='lastName' value={lastName} className='form-control' onChange={(e) => setLastName(e.target.value)} >
                 </input>
               </div>
               <div className="form-group mb-2">
                 <label className="form-label">Email : </label>
-                <input type='text' placeholder='Enter Employee Email' name='email' value={email} className='form-control' onChange={handleEmail} >
+                <input type='text' placeholder='Enter Employee Email' name='email' value={email} className='form-control' onChange={(e) => setEmail(e.target.value)} >
                 </input>
               </div>
 
@@ -52,7 +51,7 @@ const EmployeeComponent = () => {
             </form>
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   )
 }
