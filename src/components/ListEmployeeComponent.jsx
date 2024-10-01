@@ -20,7 +20,7 @@ const ListEmployeeComponent = () => {
     }
 
     function updateEmployee(id){
-        
+        navigator(`/edit-employee/${id}`)
     }
 
   return (
