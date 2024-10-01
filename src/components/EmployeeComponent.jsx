@@ -19,7 +19,7 @@ const EmployeeComponent = () => {
   function saveEmployee(e) {
     e.preventDefault();
 
-    if(validateForm){
+    if(validateForm()){
     const employee = { firstName, lastName, email }
     console.log(employee)
 
@@ -85,7 +85,7 @@ const EmployeeComponent = () => {
                 </input>
                 { errors.lastName && <div className="invalid-feedback"> {errors.lastName} </div> }
               </div>
-              
+
               <div className="form-group mb-2">
                 <label className="form-label">Email : </label>
                 <input type='text' placeholder='Enter Employee Email' name='email' value={email} className={`form-control ${errors.email ? 'is-invalid':''}`} onChange={(e) => setEmail(e.target.value)} >
