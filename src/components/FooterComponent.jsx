@@ -1,13 +1,11 @@
-import React from 'react'
-
 const FooterComponent = () => {
   return (
     <div>
-      <footer className='footer' >
+      <footer className="footer">
         <span>All rights reserved 2024 by CodeForgeNet</span>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default FooterComponent
+export default FooterComponent;
