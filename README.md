@@ -75,7 +75,7 @@ Open your browser at:
 
 This frontend works with the Employee Management Backend built in Spring Boot. Make sure the backend is running before interacting with this UI.
 Backend Source -
-https://github.com/CodeForgeNet/spring-jakartaee-project
+"https://github.com/CodeForgeNet/spring-jakartaee-project";
 
 ⸻
 
